@@ -29,7 +29,7 @@ public class ProcessList {
      */
     public void printList(){
         int count = 0;
-        for (int i : randList ){
+        for (int i : randList){
             // Check if it is the last element, to make no ',' after the last element
             if (count++ != randList.size() - 1){
                 System.out.print(i + ", ");
