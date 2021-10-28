@@ -65,8 +65,10 @@ public class ProcessList {
      * @return  frequency
      * @return  matching number
      */
-    public int getMostFrequentElement(){
+    public ArrayList<Integer> getMostFrequentElement(){
+
         // TODO
-        return 1;
+        return randList;
+        // randList is just for no error msg, you need to change that
     }
 }
