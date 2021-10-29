@@ -16,7 +16,8 @@ public class Main {
         processList.printList();
 
         //Sort list
-//        System.out.println("Chosen Sort");
+        System.out.println("Chosen Sort");
+        Sort.bubbleSort(processList.getList());
 //        Sort.selectionSort(processList.getList());
 //        processList.printList();
 
