@@ -8,7 +8,6 @@ public class ProcessList {
     private ArrayList<Integer> sortList = new ArrayList<Integer>();
 
 
-
     /**
      * Constructor of ProcessList class
      * Goal(s):
@@ -24,10 +23,11 @@ public class ProcessList {
         }
     }
 
+
     /**
      * A method to print the whole list (unsorted: randList // sorted: sortList)
      * Goal(s):
-     *      (1) Print list using for-each loop/
+     *      (1) Print list using for-each loop
      */
     public void printList(){
         int count = 0;
@@ -55,9 +55,16 @@ public class ProcessList {
 
     }
 
+
+    /**
+     * Setter of sortList
+     * @param sortList - ArrayList from sorting method
+     */
     public void setSortList(ArrayList <Integer> sortList){
         this.sortList = sortList;
     }
+
+
     /**
      * A getter to retrieve private variable to other classes
      * Goal(s):

@@ -31,11 +31,11 @@ public class Main {
             case 1:
                 processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
                 processList.printList();
-
+                break;
+            case 2:
+                processList.setSortList(Sort.selectionSort(processList.getList()));
+                processList.printList();
                 // TODO - rewrite the sorting method name
-//            case 2:
-//                processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
-//                processList.printList();
 //            case 3:
 //                processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
 //                processList.printList();
