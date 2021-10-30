@@ -1,30 +1,39 @@
-import java.util.List;
+import java.util.ArrayList;
+
 
 public class Sort {
-    
-    public static void bubbleSort(List<Integer> sortList){
+
+    // Static method allows Main class to use this method with initialing object
+    public static ArrayList<Integer> bubbleSort(ArrayList<Integer> sortList, int listSize){
         int temp;
-        boolean sorted = false;
-        while (!sorted) {
-            sorted = true;
-            for (int i = 0; i < sortList.size()-1; i++) {
-                if (sortList.get(i) > (sortList.get(i + 1))) {
-                    temp = sortList.get(i);
-                    sortList.set(i, sortList.get(i + 1));
-                    sortList.set(i + 1, temp);
-                    sorted = false;
-                }
+        if (listSize == 1){ return sortList; }
+
+        for (int i = 0; i <  listSize - 1; i++) {
+            if (sortList.get(i) > (sortList.get(i + 1))){
+                temp = sortList.get(i);
+                sortList.set(i, sortList.get(i + 1));
+                sortList.set(i + 1, temp);
             }
         }
 
-        sortList.forEach((n) -> System.out.print(n + " "));
+        bubbleSort(sortList, listSize -1);
+        return sortList;
+//        sortList.forEach((n) -> System.out.print(n + " "));
     }
 
-    public static void selectionSort(List <Integer> sortList){
+    public static void selectionSort(ArrayList <Integer> sortList){
 
     }
 
-    public static void insertionSort(List <Integer> sortList){
+    public static void insertionSort(ArrayList <Integer> sortList){
+
+    }
+
+    public static void mergeSort(ArrayList <Integer> sortList){
+
+    }
+
+    public static void quickSort(ArrayList <Integer> sortList){
 
     }
 }

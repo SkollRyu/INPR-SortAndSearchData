@@ -5,6 +5,8 @@ import java.util.Random;
 
 public class ProcessList {
     private ArrayList<Integer> randList = new ArrayList<Integer>();
+    private ArrayList<Integer> sortList = new ArrayList<Integer>();
+
 
 
     /**
@@ -23,22 +25,39 @@ public class ProcessList {
     }
 
     /**
-     * A method to print the whole list
+     * A method to print the whole list (unsorted: randList // sorted: sortList)
      * Goal(s):
      *      (1) Print list using for-each loop/
      */
     public void printList(){
         int count = 0;
-        for (int i : randList){
-            // Check if it is the last element, to make no ',' after the last element
-            if (count++ != randList.size() - 1){
-                System.out.print(i + ", ");
-            } else {
-                System.out.println(i);
+
+        // Check if sortList has been sorted
+        if (sortList.isEmpty()){
+            for (int i : randList){
+                // Check if it is the last element, to make no ',' after the last element
+                if (count++ != randList.size() - 1){
+                    System.out.print(i + ", ");
+                } else {
+                    System.out.println(i);
+                }
+            }
+        } else{
+            for (int i : sortList){
+                // Check if it is the last element, to make no ',' after the last element
+                if (count++ != sortList.size() - 1){
+                    System.out.print(i + ", ");
+                } else {
+                    System.out.println(i);
+                }
             }
         }
+
     }
 
+    public void setSortList(ArrayList <Integer> sortList){
+        this.sortList = sortList;
+    }
     /**
      * A getter to retrieve private variable to other classes
      * Goal(s):
@@ -49,6 +68,7 @@ public class ProcessList {
         return randList;
     }
 
+
     /**
      * A method to get the size of randList - allow sort class to use
      * @return randList.size() - the size of randList
@@ -56,6 +76,7 @@ public class ProcessList {
     public int getListSize(){
         return randList.size();
     }
+
 
     /**
      * Uses any effective method to calculate the most frequent number
