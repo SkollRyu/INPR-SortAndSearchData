@@ -28,6 +28,8 @@ public class Main {
                 Choose 1 sorting method:\s""");
         int choice = sc.nextInt();
         switch (choice){
+            default:
+                
             case 1:
                 processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
                 processList.printList();
@@ -35,10 +37,12 @@ public class Main {
             case 2:
                 processList.setSortList(Sort.selectionSort(processList.getList()));
                 processList.printList();
+                break;
+            case 3:
+                processList.setSortList(Sort.insertionSort(processList.getList()));
+                processList.printList();
+                break;
                 // TODO - rewrite the sorting method name
-//            case 3:
-//                processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
-//                processList.printList();
 //            case 4:
 //                processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
 //                processList.printList();
