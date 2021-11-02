@@ -43,9 +43,10 @@ public class Main {
                 processList.printList();
                 break;
                 // TODO - rewrite the sorting method name
-//            case 4:
-//                processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
-//                processList.printList();
+            case 4:
+                processList.setSortList(Sort.mergeSort(processList.getList()));
+                processList.printList();
+                break;
 //            case 5:
 //                processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
 //                processList.printList();
