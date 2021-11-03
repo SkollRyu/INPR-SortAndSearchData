@@ -48,18 +48,18 @@ public class Main {
                 processList.printList();
                 break;
 //            case 5:
-//                processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
+//                processList.setSortList(Sort.quickSort(processList.getList(), processList.getListSize()));
 //                processList.printList();
         }
 
 
 
 
-        // Searching
-//        for (int i = 0; i < 100; i++) {
-//            if (Search.linearSearch(i, processList.getList()) >= 0) {
-//                System.out.println(i + " found ");
-//            }
-//        }
+        //Searching
+        for (int i = 0; i < 100; i++) {
+            if (Search.linearSearch(i, processList.getList()) >= 0) {
+                System.out.println(i + " found ");
+            }
+        }
     }
 }
