@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.*;
 // More efficient and less biased
 
 
@@ -93,10 +92,15 @@ public class ProcessList {
      * @return  frequency
      * @return  matching number
      */
-    public ArrayList<Integer> getMostFrequentElement(){
+    public void getMostFrequentElement(){
+        HashMap<Integer, Integer> freqHashMap = new HashMap<>();
+        for (int i : sortList){
+            freqHashMap.put(i, Collections.frequency(sortList, i));
+        }
+        for (Map.Entry<Integer, Integer> entry : freqHashMap.entrySet()) {
 
-        // TODO
-        return randList;
-        // randList is just for no error msg, you need to change that
+            System.out.println(entry.getKey() + " : "
+                    + entry.getValue());
+        }
     }
 }
