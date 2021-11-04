@@ -25,31 +25,55 @@ public class Main {
                 3. Insertion Sort\s
                 4. Merge Sort\s
                 5. Quick Sort\s
+                6. Select all sorting method and return execution for each sorting method\s
                 Choose 1 sorting method:\s""");
         int choice = sc.nextInt();
-        switch (choice){
-            default:
-                
-            case 1:
+        switch (choice) {
+            case 1 -> {
                 processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
                 processList.printList();
-                break;
-            case 2:
+            }
+            case 2 -> {
                 processList.setSortList(Sort.selectionSort(processList.getList()));
                 processList.printList();
-                break;
-            case 3:
+            }
+            case 3 -> {
                 processList.setSortList(Sort.insertionSort(processList.getList()));
                 processList.printList();
-                break;
-                // TODO - rewrite the sorting method name
-            case 4:
+            }
+            // TODO - rewrite the sorting method name
+            case 4 -> {
                 processList.setSortList(Sort.mergeSort(processList.getList()));
                 processList.printList();
-                break;
+            }
 //            case 5:
 //                processList.setSortList(Sort.quickSort(processList.getList(), processList.getListSize()));
 //                processList.printList();
+            case 6 -> {
+                long startTime = System.nanoTime();
+                processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
+                long endTime = System.nanoTime();
+                long duration = (endTime - startTime);
+                System.out.println("Bubble sort:" + duration);
+
+                startTime = System.nanoTime();
+                processList.setSortList(Sort.selectionSort(processList.getList()));
+                endTime = System.nanoTime();
+                duration = (endTime - startTime);
+                System.out.println("Selection sort:" + duration);
+
+                startTime = System.nanoTime();
+                processList.setSortList(Sort.insertionSort(processList.getList()));
+                endTime = System.nanoTime();
+                duration = (endTime - startTime);
+                System.out.println("Insertion sort:" + duration);
+
+                startTime = System.nanoTime();
+                processList.setSortList(Sort.mergeSort(processList.getList()));
+                endTime = System.nanoTime();
+                duration = (endTime - startTime);
+                System.out.println("merge sort:" + duration);
+            }
         }
 
 
@@ -58,7 +82,7 @@ public class Main {
         //Searching
         for (int i = 0; i < 100; i++) {
             if (Search.linearSearch(i, processList.getList()) >= 0) {
-                System.out.println(i + " found ");
+                System.out.print(i + " found ");
             }
         }
     }

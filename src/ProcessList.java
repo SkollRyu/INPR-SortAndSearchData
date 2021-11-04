@@ -4,8 +4,8 @@ import java.util.Random;
 
 
 public class ProcessList {
-    private ArrayList<Integer> randList = new ArrayList<Integer>();
-    private ArrayList<Integer> sortList = new ArrayList<Integer>();
+    private final ArrayList<Integer> randList = new ArrayList<>();
+    private ArrayList<Integer> sortList = new ArrayList<>();
 
 
     /**

@@ -118,8 +118,8 @@ public class Sort {
         // Initialization
         int listSize = sortList.size();
         int middle = sortList.size() / 2; // to split array into half
-        ArrayList<Integer> leftList = new ArrayList<Integer>();
-        ArrayList<Integer> rightList = new ArrayList<Integer>();
+        ArrayList<Integer> leftList = new ArrayList<>();
+        ArrayList<Integer> rightList = new ArrayList<>();
 
         // Base Case
         if(listSize <= 1) {return sortList;}
@@ -145,13 +145,13 @@ public class Sort {
 
     /**
      * Merging Method - bottom-up merging, and comparison to form a sorted list
-     * @param leftList
-     * @param rightList
+     * @param leftList - divided array list (first-half)
+     * @param rightList - divided array list (remaining)
      * @return mergeList - to the mergeSort method to the sortList array to return
      */
     public static ArrayList<Integer> merge(ArrayList<Integer> leftList, ArrayList<Integer> rightList) {
         // Initialization - for me to indicate
-        ArrayList<Integer> mergeList = new ArrayList<Integer>();
+        ArrayList<Integer> mergeList = new ArrayList<>();
 
         // While there are any elements in divided list, loop
         while(leftList.size() > 0 || rightList.size() > 0) {
