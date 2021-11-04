@@ -83,6 +83,8 @@ public class ProcessList {
         return randList.size();
     }
 
+    // TODO - getMost - simple finding method
+
 
     /**
      * Uses any effective method to calculate the most frequent number
@@ -102,5 +104,31 @@ public class ProcessList {
             System.out.println(entry.getKey() + " : "
                     + entry.getValue());
         }
+    }
+
+    public void sortingBenchmark(ProcessList processList){
+        long startTime = System.nanoTime();
+        processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);
+        System.out.println("Bubble sort:" + duration);
+
+        startTime = System.nanoTime();
+        processList.setSortList(Sort.selectionSort(processList.getList()));
+        endTime = System.nanoTime();
+        duration = (endTime - startTime);
+        System.out.println("Selection sort:" + duration);
+
+        startTime = System.nanoTime();
+        processList.setSortList(Sort.insertionSort(processList.getList()));
+        endTime = System.nanoTime();
+        duration = (endTime - startTime);
+        System.out.println("Insertion sort:" + duration);
+
+        startTime = System.nanoTime();
+        processList.setSortList(Sort.mergeSort(processList.getList()));
+        endTime = System.nanoTime();
+        duration = (endTime - startTime);
+        System.out.println("merge sort:" + duration);
     }
 }

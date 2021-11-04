@@ -14,12 +14,13 @@ public class Main {
 
         // Create object from ProcessList class and initialize the random list
         ProcessList processList = new ProcessList(10);
-        System.out.println("Random List");
+        System.out.println("Random List:");
         processList.printList();
 
         Scanner sc = new Scanner(System.in);
         //Sort list
         System.out.println("""
+                \nMenu\s
                 1. Bubble Sort\s
                 2. Selection Sort\s
                 3. Insertion Sort\s
@@ -29,6 +30,7 @@ public class Main {
                 Choose 1 sorting method:\s""");
         int choice = sc.nextInt();
         switch (choice) {
+            // Enhanced Switch
             case 1 -> {
                 processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
                 processList.printList();
@@ -41,7 +43,6 @@ public class Main {
                 processList.setSortList(Sort.insertionSort(processList.getList()));
                 processList.printList();
             }
-            // TODO - rewrite the sorting method name
             case 4 -> {
                 processList.setSortList(Sort.mergeSort(processList.getList()));
                 processList.printList();
@@ -50,34 +51,9 @@ public class Main {
 //                processList.setSortList(Sort.quickSort(processList.getList(), processList.getListSize()));
 //                processList.printList();
             case 6 -> {
-                long startTime = System.nanoTime();
-                processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
-                long endTime = System.nanoTime();
-                long duration = (endTime - startTime);
-                System.out.println("Bubble sort:" + duration);
-
-                startTime = System.nanoTime();
-                processList.setSortList(Sort.selectionSort(processList.getList()));
-                endTime = System.nanoTime();
-                duration = (endTime - startTime);
-                System.out.println("Selection sort:" + duration);
-
-                startTime = System.nanoTime();
-                processList.setSortList(Sort.insertionSort(processList.getList()));
-                endTime = System.nanoTime();
-                duration = (endTime - startTime);
-                System.out.println("Insertion sort:" + duration);
-
-                startTime = System.nanoTime();
-                processList.setSortList(Sort.mergeSort(processList.getList()));
-                endTime = System.nanoTime();
-                duration = (endTime - startTime);
-                System.out.println("merge sort:" + duration);
+                processList.sortingBenchmark(processList);
             }
         }
-
-
-
 
         //Searching
         for (int i = 0; i < 100; i++) {
@@ -85,5 +61,9 @@ public class Main {
                 System.out.print(i + " found ");
             }
         }
+
+        processList.getMostFrequentElement(); // printout an array list and its freq num
     }
+
+
 }

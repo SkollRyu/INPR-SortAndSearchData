@@ -14,6 +14,8 @@ public class Sort {
      * @return sortList - to private sortList in the ProcessList Class
      */
     public static ArrayList<Integer> bubbleSort(ArrayList<Integer> sortList, int listSize){
+        // TODO - StackOverFlow Error when size is 100,000 - base case problem?
+
         // Initialization
         int temp;
 
@@ -32,7 +34,7 @@ public class Sort {
 
         // Sorted elements are at the end of Array list
         // So we avoid comparison between sorted elements by reducing the list Size (locally)
-        bubbleSort(sortList, listSize -1);
+        bubbleSort(sortList, listSize - 1);
 
         // Return sort list after recursive bubble sort method
         return sortList;
