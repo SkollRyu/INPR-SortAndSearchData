@@ -13,22 +13,48 @@ public class Main {
         // Original listSize: 100; I reduce it to 10 to for test
 
         // Create object from ProcessList class and initialize the random list
-        ProcessList processList = new ProcessList(10);
-        System.out.println("Random List:");
+        ProcessList processList = new ProcessList(50);
         processList.printList();
 
         Scanner sc = new Scanner(System.in);
         //Sort list
         System.out.println("""
-                \nMenu\s
+                \n====Menu====\s
                 1. Bubble Sort\s
                 2. Selection Sort\s
                 3. Insertion Sort\s
                 4. Merge Sort\s
-                5. Quick Sort\s
-                6. Select all sorting method and return execution for each sorting method\s
-                Choose 1 sorting method:\s""");
+                5. Select all sorting method and return execution for each sorting method\s
+                >>>Choose 1 sorting method:<<<\s""");
         int choice = sc.nextInt();
+        choiceToSwitchCase(processList, choice);
+
+        //Searching
+        System.out.println("\n====Linear Search Result:====");
+        for (int i = 0; i < 100; i++) {
+            if (Search.linearSearch(i, processList.getList()) >= 0) {
+                System.out.print(i + " found ");
+            }
+        }
+
+        //Binary Searching
+        System.out.println("\n====Binary Search Result:====");
+        for (int i = 0; i < 100; i++) {
+            if (Search.binarySearch(i, processList.getList()) >= 0) {
+                System.out.print(i + " found ");
+            }
+        }
+
+        processList.getMostFrequentElementHashMap(); // printout an array list and its freq num
+        processList.getMostFrequentElementArrayList();
+    }
+
+    /**
+     * Switch Case Method - Allow user to use their own sorting method
+     * @param processList
+     * @param choice
+     */
+    private static void choiceToSwitchCase(ProcessList processList, int choice) {
         switch (choice) {
             // Enhanced Switch
             case 1 -> {
@@ -47,22 +73,10 @@ public class Main {
                 processList.setSortList(Sort.mergeSort(processList.getList()));
                 processList.printList();
             }
-//            case 5:
-//                processList.setSortList(Sort.quickSort(processList.getList(), processList.getListSize()));
-//                processList.printList();
-            case 6 -> {
+            case 5 -> {
                 processList.sortingBenchmark(processList);
             }
         }
-
-        //Searching
-        for (int i = 0; i < 100; i++) {
-            if (Search.linearSearch(i, processList.getList()) >= 0) {
-                System.out.print(i + " found ");
-            }
-        }
-
-        processList.getMostFrequentElement(); // printout an array list and its freq num
     }
 
 

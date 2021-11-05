@@ -33,6 +33,7 @@ public class ProcessList {
 
         // Check if sortList has been sorted
         if (sortList.isEmpty()){
+            System.out.println("====Random List:====");
             for (int i : randList){
                 // Check if it is the last element, to make no ',' after the last element
                 if (count++ != randList.size() - 1){
@@ -42,6 +43,7 @@ public class ProcessList {
                 }
             }
         } else{
+            System.out.println("\n====Sorted List:====");
             for (int i : sortList){
                 // Check if it is the last element, to make no ',' after the last element
                 if (count++ != sortList.size() - 1){
@@ -83,29 +85,72 @@ public class ProcessList {
         return randList.size();
     }
 
-    // TODO - getMost - simple finding method
-
-
     /**
      * Uses any effective method to calculate the most frequent number
-     * or numbers in the list and print them out
-     * E.g. Max frequency 4 matching number 70
-     * - Effectiveness Explain:
-     * @return  frequency
-     * @return  matching number
+     * or numbers in the list and print them out by using hash map
+     *
+     *
      */
-    public void getMostFrequentElement(){
+    public void getMostFrequentElementHashMap(){
+        System.out.println("\n\n====Most FreqNum using HashMap====");
         HashMap<Integer, Integer> freqHashMap = new HashMap<>();
         for (int i : sortList){
             freqHashMap.put(i, Collections.frequency(sortList, i));
         }
+        int maxFreq = Collections.max(freqHashMap.values());
         for (Map.Entry<Integer, Integer> entry : freqHashMap.entrySet()) {
-
-            System.out.println(entry.getKey() + " : "
-                    + entry.getValue());
+            if (entry.getValue() == maxFreq){
+                System.out.println("The most frequent number is " + entry.getKey() + " with frequency: "
+                        + entry.getValue());
+            }
         }
     }
 
+    /**
+     * Uses any effective method to calculate the most frequent number
+     * or numbers in the list and print them out by using Array List
+     */
+    public void getMostFrequentElementArrayList(){
+
+        int maxFreq = 0;
+        ArrayList<Integer> maxFreqList = new ArrayList<>();
+
+        // Find the most frequency in the array list
+        for (int i : sortList){
+            int currCount = 0;
+            for (int j : sortList){
+                if (i == j ){
+                    currCount++;
+                }
+            }
+            if (currCount > maxFreq){
+                maxFreq = currCount;
+            }
+        }
+
+        // Find the number with the max frequency
+        for (int i : sortList){
+            int currCount = 0;
+            for (int j : sortList){
+                if (i == j ){
+                    currCount++;
+                }
+            }
+            if (currCount == maxFreq && !maxFreqList.contains(i)){
+                maxFreqList.add(i);
+            }
+        }
+        System.out.println("\n====Most FreqNum using ArrayList====");
+        System.out.println("The most frequency is " + maxFreq);
+        System.out.println("The number(s) is/are: ");
+        maxFreqList.forEach((n) -> System.out.print(n + " "));
+    }
+
+
+    /**
+     * Call all sorting methods, and compare their execution time
+     * @param processList
+     */
     public void sortingBenchmark(ProcessList processList){
         long startTime = System.nanoTime();
         processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));

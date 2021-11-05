@@ -14,7 +14,6 @@ public class Sort {
      * @return sortList - to private sortList in the ProcessList Class
      */
     public static ArrayList<Integer> bubbleSort(ArrayList<Integer> sortList, int listSize){
-        // TODO - StackOverFlow Error when size is 100,000 - base case problem?
 
         // Initialization
         int temp;
@@ -184,9 +183,5 @@ public class Sort {
         }
 
         return mergeList;
-    }
-
-    public static void quickSort(ArrayList <Integer> sortList){
-
     }
 }
