@@ -3,7 +3,7 @@ import java.util.*;
 
 
 public class ProcessList {
-    private final ArrayList<Integer> randList = new ArrayList<>();
+    private final ArrayList<Integer> randList = new ArrayList<>(); // It shouldn't be modified after the first initialization
     private ArrayList<Integer> sortList = new ArrayList<>();
 
 
@@ -15,6 +15,10 @@ public class ProcessList {
      * @param listSize - the size of list
      */
     public ProcessList(int listSize){
+        if (listSize == 0){
+            System.out.println("This is an empty list\nWe cannot do sorting and search in an empty list");
+            System.exit(0);
+        }
         Random random = new Random();
         for (int i = 0; i < listSize; i++) {
             int rand = random.nextInt(100);

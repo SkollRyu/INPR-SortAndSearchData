@@ -13,10 +13,9 @@ public class Main {
         // Original listSize: 100; I reduce it to 10 to for test
 
         // Create object from ProcessList class and initialize the random list
-        ProcessList processList = new ProcessList(50);
+        ProcessList processList = new ProcessList(10);
         processList.printList();
 
-        Scanner sc = new Scanner(System.in);
         //Sort list
         System.out.println("""
                 \n====Menu====\s
@@ -26,10 +25,10 @@ public class Main {
                 4. Merge Sort\s
                 5. Select all sorting method and return execution for each sorting method\s
                 >>>Choose 1 sorting method:<<<\s""");
-        int choice = sc.nextInt();
-        choiceToSwitchCase(processList, choice);
 
-        //Searching
+        choiceToSwitchCase(processList);
+
+        //Linear Searching
         System.out.println("\n====Linear Search Result:====");
         for (int i = 0; i < 100; i++) {
             if (Search.linearSearch(i, processList.getList()) >= 0) {
@@ -52,11 +51,16 @@ public class Main {
     /**
      * Switch Case Method - Allow user to use their own sorting method
      * @param processList
-     * @param choice
      */
-    private static void choiceToSwitchCase(ProcessList processList, int choice) {
+    private static void choiceToSwitchCase(ProcessList processList) {
+        Scanner sc = new Scanner(System.in);
+        int choice = sc.nextInt();
+        // Enhanced switch
         switch (choice) {
-            // Enhanced Switch
+            default -> {
+                System.out.println("Invalid Input, Please enter again");
+                choiceToSwitchCase(processList);
+            }
             case 1 -> {
                 processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
                 processList.printList();
@@ -74,6 +78,7 @@ public class Main {
                 processList.printList();
             }
             case 5 -> {
+                processList.printList();
                 processList.sortingBenchmark(processList);
             }
         }
