@@ -5,6 +5,7 @@
  * @since 1.0 ; 25 OCT 2021
  */
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -55,6 +56,8 @@ public class Main {
     private static void choiceToSwitchCase(ProcessList processList) {
         Scanner sc = new Scanner(System.in);
         int choice = sc.nextInt();
+        ArrayList<Integer> randlist = processList.getList();
+
         // Enhanced switch
         switch (choice) {
             default -> {
@@ -62,19 +65,19 @@ public class Main {
                 choiceToSwitchCase(processList);
             }
             case 1 -> {
-                processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
+                processList.setSortList(Sort.bubbleSort(randlist, processList.getListSize()));
                 processList.printList();
             }
             case 2 -> {
-                processList.setSortList(Sort.selectionSort(processList.getList()));
+                processList.setSortList(Sort.selectionSort(randlist));
                 processList.printList();
             }
             case 3 -> {
-                processList.setSortList(Sort.insertionSort(processList.getList()));
+                processList.setSortList(Sort.insertionSort(randlist));
                 processList.printList();
             }
             case 4 -> {
-                processList.setSortList(Sort.mergeSort(processList.getList()));
+                processList.setSortList(Sort.mergeSort(randlist));
                 processList.printList();
             }
             case 5 -> {

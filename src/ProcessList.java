@@ -6,7 +6,6 @@ public class ProcessList {
     private final ArrayList<Integer> randList = new ArrayList<>(); // It shouldn't be modified after the first initialization
     private ArrayList<Integer> sortList = new ArrayList<>();
 
-
     /**
      * Constructor of ProcessList class
      * Goal(s):
