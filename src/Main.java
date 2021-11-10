@@ -56,7 +56,7 @@ public class Main {
     private static void choiceToSwitchCase(ProcessList processList) {
         Scanner sc = new Scanner(System.in);
         int choice = sc.nextInt();
-        ArrayList<Integer> randlist = processList.getList();
+        ArrayList<Integer> randList = processList.getList();
 
         // Enhanced switch
         switch (choice) {
@@ -65,19 +65,19 @@ public class Main {
                 choiceToSwitchCase(processList);
             }
             case 1 -> {
-                processList.setSortList(Sort.bubbleSort(randlist, processList.getListSize()));
+                processList.setSortList(Sort.bubbleSort(randList, processList.getListSize()));
                 processList.printList();
             }
             case 2 -> {
-                processList.setSortList(Sort.selectionSort(randlist));
+                processList.setSortList(Sort.selectionSort(randList));
                 processList.printList();
             }
             case 3 -> {
-                processList.setSortList(Sort.insertionSort(randlist));
+                processList.setSortList(Sort.insertionSort(randList));
                 processList.printList();
             }
             case 4 -> {
-                processList.setSortList(Sort.mergeSort(randlist));
+                processList.setSortList(Sort.mergeSort(randList));
                 processList.printList();
             }
             case 5 -> {
