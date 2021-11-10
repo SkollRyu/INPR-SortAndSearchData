@@ -32,7 +32,7 @@ public class Main {
         //Linear Searching
         System.out.println("\n====Linear Search Result:====");
         for (int i = 0; i < 100; i++) {
-            if (Search.linearSearch(i, processList.getList()) >= 0) {
+            if (Search.linearSearch(i, processList.getSortList()) >= 0) {
                 System.out.print(i + " found ");
             }
         }
@@ -40,7 +40,7 @@ public class Main {
         //Binary Searching
         System.out.println("\n====Binary Search Result:====");
         for (int i = 0; i < 100; i++) {
-            if (Search.binarySearch(i, processList.getList()) >= 0) {
+            if (Search.binarySearch(i, processList.getSortList()) >= 0) {
                 System.out.print(i + " found ");
             }
         }
@@ -56,7 +56,7 @@ public class Main {
     private static void choiceToSwitchCase(ProcessList processList) {
         Scanner sc = new Scanner(System.in);
         int choice = sc.nextInt();
-        ArrayList<Integer> randList = processList.getList();
+        ArrayList<Integer> randList = processList.getRandList();
 
         // Enhanced switch
         switch (choice) {

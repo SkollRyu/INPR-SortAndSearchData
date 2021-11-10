@@ -70,13 +70,24 @@ public class ProcessList {
 
 
     /**
-     * A getter to retrieve private variable to other classes
+     * A getter to retrieve private randList to other classes
      * Goal(s):
      *      (1) Returns the ArrayList of random numbers
      * @return randList - the list of randomly generated numbers
      */
-    public ArrayList<Integer> getList(){
+    public ArrayList<Integer> getRandList(){
         return randList;
+    }
+
+
+    /**
+     * A getter to retrieve private sortList to other classes
+     * Goal(s):
+     *      (1) Returns the ArrayList of random numbers
+     * @return sortList - the list of randomly generated numbers
+     */
+    public ArrayList<Integer> getSortList(){
+        return sortList;
     }
 
 
@@ -156,25 +167,25 @@ public class ProcessList {
      */
     public void sortingBenchmark(ProcessList processList){
         long startTime = System.nanoTime();
-        processList.setSortList(Sort.bubbleSort(processList.getList(), processList.getListSize()));
+        processList.setSortList(Sort.bubbleSort(processList.getRandList(), processList.getListSize()));
         long endTime = System.nanoTime();
         long duration = (endTime - startTime);
         System.out.println("Bubble sort:" + duration);
 
         startTime = System.nanoTime();
-        processList.setSortList(Sort.selectionSort(processList.getList()));
+        processList.setSortList(Sort.selectionSort(processList.getRandList()));
         endTime = System.nanoTime();
         duration = (endTime - startTime);
         System.out.println("Selection sort:" + duration);
 
         startTime = System.nanoTime();
-        processList.setSortList(Sort.insertionSort(processList.getList()));
+        processList.setSortList(Sort.insertionSort(processList.getRandList()));
         endTime = System.nanoTime();
         duration = (endTime - startTime);
         System.out.println("Insertion sort:" + duration);
 
         startTime = System.nanoTime();
-        processList.setSortList(Sort.mergeSort(processList.getList()));
+        processList.setSortList(Sort.mergeSort(processList.getRandList()));
         endTime = System.nanoTime();
         duration = (endTime - startTime);
         System.out.println("merge sort:" + duration);
