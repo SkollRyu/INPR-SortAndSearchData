@@ -110,7 +110,7 @@ public class Sort {
 
     /**
      * Merge Sort - Top-down Implementation using ArrayList
-     *      Time Complexity - O(n log n), even the best case is still O(n^2)
+     *      Time Complexity - O(n log n)
      *      Space Complexity - O(n), because we need to initialize array for split elements
      * @param sortList - sortList
      * @return sortList - to private sortList in the ProcessList Class
@@ -155,9 +155,9 @@ public class Sort {
         ArrayList<Integer> mergeList = new ArrayList<>();
 
         // While there are any elements in divided list, loop
-        while(leftList.size() > 0 || rightList.size() > 0) {
+        while(leftList.size() != 0 || rightList.size() != 0) {
             // Scenario 1: Both L & R list contains elements
-            if(leftList.size() > 0 && rightList.size() > 0) {
+            if(leftList.size() != 0 && rightList.size() != 0) {
                 // Comparison - find the smallest element of the two lists
                 // Since the list has already sorted,
                 // so index = 0 will be the smallest elements in each lists
@@ -171,7 +171,7 @@ public class Sort {
                 }
             }
             // Scenario 2: Only L list contains elements
-            else if(leftList.size() > 0) {
+            else if(leftList.size() != 0) {
                 mergeList.add(leftList.get(0));
                 leftList.remove(0);
             }
