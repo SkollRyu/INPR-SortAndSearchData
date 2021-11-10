@@ -27,7 +27,7 @@ public class Search {
     public static int binarySearch(int target, ArrayList<Integer> searchList){
         int start = 0;
         int end = searchList.size() - 1;
-        int index = -1;
+        int index = -1; //if target is not found, default return is -1
 
         while(start <= end){
         // loop until only one index of the target element is left
