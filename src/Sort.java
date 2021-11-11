@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 
 public class Sort {
+
+    // Todo - should I have default constructor for the sort class?
+
     // Static method allows Main class to use this method without initialing object
 
 

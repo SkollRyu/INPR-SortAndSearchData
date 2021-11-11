@@ -81,8 +81,8 @@ public class Main {
                 processList.printList();
             }
             case 5 -> {
-                processList.printList();
                 processList.sortingBenchmark(processList);
+                processList.printList();
             }
         }
     }
