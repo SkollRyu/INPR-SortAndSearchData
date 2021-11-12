@@ -14,7 +14,7 @@ public class ProcessList {
      * @param listSize - the size of list
      */
     public ProcessList(int listSize){
-        if (listSize == 0){
+        if (listSize <= 0){
             System.out.println("This is an empty list\nWe cannot do sorting and search in an empty list");
             System.exit(0);
         }
