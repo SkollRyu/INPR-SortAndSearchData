@@ -30,6 +30,13 @@ public class Main {
         choiceToSwitchCase(processList);
 
         // Linear search deleted
+        //Linear Searching
+        System.out.println("\n====Linearhahaha Search Result:====");
+        for (int i = 0; i < 100; i++) {
+            if (Search.linearSearch(i, processList.getSortList()) >= 0) {
+                System.out.print(i + " found ");
+            }
+        }
 
         //Binary Searching
         System.out.println("\n====Binary Search Result:====");
