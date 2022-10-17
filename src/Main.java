@@ -29,6 +29,7 @@ public class Main {
 
         choiceToSwitchCase(processList);
 
+        // Linear search deleted
 
         //Binary Searching
         System.out.println("\n====Binary Search Result:====");
